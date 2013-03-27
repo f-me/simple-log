@@ -20,4 +20,4 @@ consoleErr :: Consumer Text
 consoleErr = Consumer withConsole where
     withConsole f = do
         hSetEncoding stderr utf8
-        f T.putStrLn
+        f $ T.hPutStrLn stderr
